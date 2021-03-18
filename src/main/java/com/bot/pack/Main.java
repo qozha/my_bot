@@ -7,11 +7,10 @@ import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 
 public class Main {
     public static void main(String[] args) {
-        SpringApplication.run(TelegramBotApplication.class, args);
-
+        SpringApplication.run(PhotoBot.class, args);
         try {
             TelegramBotsApi botsApi = new TelegramBotsApi(DefaultBotSession.class);
-            botsApi.registerBot(new TelegramBotApplication());
+            botsApi.registerBot(new PhotoBot());
         } catch(TelegramApiException e){
             e.printStackTrace();
         }
